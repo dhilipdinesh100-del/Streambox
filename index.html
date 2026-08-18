@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StreamBox - Streaming UI</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <header class="navbar">
+
+        <div class="logo">
+            STREAM<span>BOX</span>
+        </div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#movies">Movies</a>
+            <a href="#shows">TV Shows</a>
+            <a href="#popular">Popular</a>
+            <a href="#mylist">My List</a>
+        </nav>
+
+        <div class="nav-right">
+            <button id="searchBtn">🔍</button>
+            <div class="profile">SB</div>
+        </div>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="featured">#1 IN MOVIES TODAY</p>
+
+            <h1>
+                THE LAST
+                <br>
+                HORIZON
+            </h1>
+
+            <div class="movie-info">
+                <span>2026</span>
+                <span>16+</span>
+                <span>2h 18m</span>
+                <span>HD</span>
+            </div>
+
+            <p class="description">
+                A fearless crew crosses the edge of known space
+                to find a world that could change humanity forever.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="play-btn" id="playBtn">
+                    ▶ Play
+                </button>
+
+                <button class="info-btn" id="infoBtn">
+                    ⓘ More Info
+                </button>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- TRENDING -->
+    <section class="movie-section" id="popular">
+
+        <div class="section-title">
+            <h2>Trending Now</h2>
+        </div>
+
+        <div class="movie-container">
+
+            <button class="arrow left" onclick="scrollMovies('trending', -1)">
+                ‹
+            </button>
+
+            <div class="movie-row" id="trending">
+
+                <div class="movie-card">
+                    <div class="poster poster1">
+                        <h3>NEON<br>CITY</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster2">
+                        <h3>AFTER<br>MIDNIGHT</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster3">
+                        <h3>NORTH<br>BOUND</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster4">
+                        <h3>WILD<br>SIGNAL</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster5">
+                        <h3>THE<br>HEIST</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster6">
+                        <h3>ECHOES</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="arrow right" onclick="scrollMovies('trending', 1)">
+                ›
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MOVIES -->
+    <section class="movie-section" id="movies">
+
+        <div class="section-title">
+            <h2>Popular Movies</h2>
+        </div>
+
+        <div class="movie-container">
+
+            <button class="arrow left" onclick="scrollMovies('moviesRow', -1)">
+                ‹
+            </button>
+
+            <div class="movie-row" id="moviesRow">
+
+                <div class="movie-card">
+                    <div class="poster poster7">
+                        <h3>DARK<br>MATTER</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster8">
+                        <h3>REDLINE</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster9">
+                        <h3>GLASS<br>HOUSE</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster10">
+                        <h3>WILD<br>LANDS</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster11">
+                        <h3>GRAVITY</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster12">
+                        <h3>FIRST<br>LIGHT</h3>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="arrow right" onclick="scrollMovies('moviesRow', 1)">
+                ›
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- TV SHOWS -->
+    <section class="movie-section" id="shows">
+
+        <div class="section-title">
+            <h2>New Releases</h2>
+        </div>
+
+        <div class="movie-container">
+
+            <div class="movie-row">
+
+                <div class="movie-card">
+                    <div class="poster poster13">
+                        <h3>PARALLEL</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster14">
+                        <h3>BLUE<br>HOUR</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster15">
+                        <h3>SIGNAL<br>LOST</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster16">
+                        <h3>RUNAWAY</h3>
+                    </div>
+                </div>
+
+                <div class="movie-card">
+                    <div class="poster poster17">
+                        <h3>THE<br>DEEP</h3>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h2>
+            STREAM<span>BOX</span>
+        </h2>
+
+        <p>
+            Educational streaming UI clone
+        </p>
+
+        <p>
+            Built with HTML, CSS and JavaScript
+        </p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
