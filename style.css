@@ -984,3 +984,478 @@ footer .logo {
     }
 
 }
+/* =====================================================
+   STREAMBOX CINEMATIC HERO
+===================================================== */
+
+.hero {
+    position: relative;
+
+    min-height: 720px;
+
+    width: 100%;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    background: #050505;
+}
+
+
+/* =====================================================
+   HERO BACKGROUND IMAGE
+===================================================== */
+
+.hero-background {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=2200&q=90");
+
+    background-size: cover;
+
+    background-position: center;
+
+    transform: scale(1.03);
+
+    filter: brightness(0.75);
+
+}
+
+
+/* =====================================================
+   CINEMATIC GRADIENT
+===================================================== */
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,0.98) 0%,
+            rgba(0,0,0,0.90) 25%,
+            rgba(0,0,0,0.55) 55%,
+            rgba(0,0,0,0.25) 100%
+        ),
+
+        linear-gradient(
+            0deg,
+            #050505 0%,
+            transparent 35%,
+            rgba(0,0,0,0.25) 100%
+        );
+
+    z-index: 1;
+
+}
+
+
+/* =====================================================
+   HERO CONTENT
+===================================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 700px;
+
+    margin-left: 7%;
+
+    padding-top: 80px;
+
+}
+
+
+/* =====================================================
+   TRENDING BADGE
+===================================================== */
+
+.trending-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 10px 18px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(255,40,40,0.45);
+
+    border-radius: 6px;
+
+    background:
+        rgba(90,0,0,0.35);
+
+    color: #ff3b3b;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+}
+
+
+/* =====================================================
+   HERO TITLE
+===================================================== */
+
+.hero h1 {
+
+    margin: 0;
+
+    font-size: clamp(
+        65px,
+        7vw,
+        115px
+    );
+
+    line-height: 0.86;
+
+    letter-spacing: -5px;
+
+    font-weight: 900;
+
+    color: white;
+
+    text-shadow:
+        0 5px 30px rgba(0,0,0,0.8);
+
+}
+
+
+/* =====================================================
+   HERO META
+===================================================== */
+
+.hero-meta {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 35px;
+
+    color: #d4d4d4;
+
+    font-size: 17px;
+
+}
+
+
+.hero-meta .age {
+
+    border: 1px solid #777;
+
+    padding: 3px 7px;
+
+    font-size: 13px;
+
+}
+
+
+.hero-meta strong {
+
+    color: #ffffff;
+
+    font-weight: 800;
+
+}
+
+
+/* =====================================================
+   HERO DESCRIPTION
+===================================================== */
+
+.hero-description {
+
+    max-width: 650px;
+
+    margin-top: 25px;
+
+    color: #d7d7d7;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* =====================================================
+   HERO BUTTONS
+===================================================== */
+
+.hero-buttons {
+
+    display: flex;
+
+    gap: 14px;
+
+    margin-top: 30px;
+
+}
+
+
+.hero-buttons button {
+
+    border: none;
+
+    border-radius: 6px;
+
+    padding: 15px 25px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+
+}
+
+
+.hero-buttons button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.hero-play {
+
+    background: white;
+
+    color: black;
+
+}
+
+
+.hero-play:hover {
+
+    background: #eeeeee;
+
+}
+
+
+.hero-info {
+
+    background:
+        rgba(70,70,70,0.9);
+
+    color: white;
+
+}
+
+
+.hero-info:hover {
+
+    background:
+        rgba(100,100,100,0.95);
+
+}
+
+
+/* =====================================================
+   CINEMATIC LIGHT EFFECT
+===================================================== */
+
+.hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: 8%;
+
+    top: 15%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,30,30,0.15),
+            transparent 70%
+        );
+
+    z-index: 1;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        min-height: 650px;
+
+        align-items: flex-end;
+
+    }
+
+
+    .hero-content {
+
+        margin-left: 25px;
+
+        margin-right: 25px;
+
+        padding-bottom: 60px;
+
+        padding-top: 150px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 60px;
+
+        letter-spacing: -3px;
+
+    }
+
+
+    .hero-description {
+
+        font-size: 15px;
+
+    }
+
+
+    .hero-meta {
+
+        gap: 10px;
+
+        font-size: 14px;
+
+        flex-wrap: wrap;
+
+    }
+
+
+    .hero-background {
+
+        background-position:
+            center;
+
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .hero h1 {
+
+        font-size: 48px;
+
+    }
+
+
+    .trending-badge {
+
+        font-size: 11px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .hero-buttons button {
+
+        width: 170px;
+
+    }
+
+}
+/* =========================================
+   REMOVE EXTRA SPACE ABOVE HERO
+========================================= */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Keep navbar above the hero */
+.navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Make hero start directly behind navbar */
+.hero-background,
+.hero-overlay {
+    top: 0;
+}
+
+/* Keep hero content positioned nicely */
+.hero-content {
+    padding-top: 100px !important;
+}
+html,
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+main {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.hero {
+    margin: 0 !important;
+}
