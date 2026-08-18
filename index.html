@@ -4,268 +4,345 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>StreamBox - Streaming UI</title>
+    <title>StreamBox | Movies & TV Shows</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION BAR -->
-    <header class="navbar">
+<!-- ================= NAVBAR ================= -->
 
-        <div class="logo">
-            STREAM<span>BOX</span>
+<header class="navbar">
+
+    <div class="logo">
+        STREAM<span>BOX</span>
+    </div>
+
+    <nav>
+        <a href="#home" class="active">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#shows">TV Shows</a>
+        <a href="#trending">Trending</a>
+        <a href="#my-list">My List</a>
+    </nav>
+
+    <div class="nav-right">
+
+        <button id="searchButton" class="nav-icon">
+            🔍
+        </button>
+
+        <button class="nav-icon">
+            🔔
+        </button>
+
+        <div class="profile">
+            SB
         </div>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#movies">Movies</a>
-            <a href="#shows">TV Shows</a>
-            <a href="#popular">Popular</a>
-            <a href="#mylist">My List</a>
-        </nav>
+    </div>
 
-        <div class="nav-right">
-            <button id="searchBtn">🔍</button>
-            <div class="profile">SB</div>
+</header>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div class="search-box" id="searchBox">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search movies..."
+    >
+
+</div>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-gradient"></div>
+
+    <div class="hero-content">
+
+        <div class="trending-label">
+            🔥 #1 TRENDING TODAY
         </div>
 
-    </header>
+        <h1>
+            THE LAST<br>
+            HORIZON
+        </h1>
 
+        <div class="hero-info">
 
-    <!-- HERO SECTION -->
-    <section class="hero">
+            <span>2026</span>
 
-        <div class="hero-content">
+            <span class="age">16+</span>
 
-            <p class="featured">#1 IN MOVIES TODAY</p>
+            <span>2h 18m</span>
 
-            <h1>
-                THE LAST
-                <br>
-                HORIZON
-            </h1>
+            <span>Adventure</span>
 
-            <div class="movie-info">
-                <span>2026</span>
-                <span>16+</span>
-                <span>2h 18m</span>
-                <span>HD</span>
-            </div>
-
-            <p class="description">
-                A fearless crew crosses the edge of known space
-                to find a world that could change humanity forever.
-            </p>
-
-            <div class="hero-buttons">
-                <button class="play-btn" id="playBtn">
-                    ▶ Play
-                </button>
-
-                <button class="info-btn" id="infoBtn">
-                    ⓘ More Info
-                </button>
-            </div>
+            <strong>4K</strong>
 
         </div>
 
-    </section>
+        <p>
+            Humanity's final expedition travels beyond the known universe
+            to discover a mysterious planet that could change everything.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button class="play-button" id="heroPlay">
+                ▶ Play
+            </button>
+
+            <button class="info-button" id="heroInfo">
+                ⓘ More Info
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-    <!-- TRENDING -->
-    <section class="movie-section" id="popular">
+<!-- ================= TRENDING ================= -->
 
-        <div class="section-title">
+<section class="section" id="trending">
+
+    <div class="section-title">
+
+        <div>
             <h2>Trending Now</h2>
+            <p>What everyone is watching</p>
         </div>
 
-        <div class="movie-container">
+        <div class="slider-buttons">
 
-            <button class="arrow left" onclick="scrollMovies('trending', -1)">
+            <button onclick="scrollRow('trendingRow', -1)">
                 ‹
             </button>
 
-            <div class="movie-row" id="trending">
-
-                <div class="movie-card">
-                    <div class="poster poster1">
-                        <h3>NEON<br>CITY</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster2">
-                        <h3>AFTER<br>MIDNIGHT</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster3">
-                        <h3>NORTH<br>BOUND</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster4">
-                        <h3>WILD<br>SIGNAL</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster5">
-                        <h3>THE<br>HEIST</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster6">
-                        <h3>ECHOES</h3>
-                    </div>
-                </div>
-
-            </div>
-
-            <button class="arrow right" onclick="scrollMovies('trending', 1)">
+            <button onclick="scrollRow('trendingRow', 1)">
                 ›
             </button>
 
         </div>
 
-    </section>
+    </div>
+
+    <div class="movie-row" id="trendingRow"></div>
+
+</section>
 
 
-    <!-- MOVIES -->
-    <section class="movie-section" id="movies">
+<!-- ================= MOVIES ================= -->
 
-        <div class="section-title">
+<section class="section" id="movies">
+
+    <div class="section-title">
+
+        <div>
             <h2>Popular Movies</h2>
+            <p>Top picks for you</p>
         </div>
 
-        <div class="movie-container">
+        <div class="slider-buttons">
 
-            <button class="arrow left" onclick="scrollMovies('moviesRow', -1)">
+            <button onclick="scrollRow('popularRow', -1)">
                 ‹
             </button>
 
-            <div class="movie-row" id="moviesRow">
-
-                <div class="movie-card">
-                    <div class="poster poster7">
-                        <h3>DARK<br>MATTER</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster8">
-                        <h3>REDLINE</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster9">
-                        <h3>GLASS<br>HOUSE</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster10">
-                        <h3>WILD<br>LANDS</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster11">
-                        <h3>GRAVITY</h3>
-                    </div>
-                </div>
-
-                <div class="movie-card">
-                    <div class="poster poster12">
-                        <h3>FIRST<br>LIGHT</h3>
-                    </div>
-                </div>
-
-            </div>
-
-            <button class="arrow right" onclick="scrollMovies('moviesRow', 1)">
+            <button onclick="scrollRow('popularRow', 1)">
                 ›
             </button>
 
         </div>
 
-    </section>
+    </div>
+
+    <div class="movie-row" id="popularRow"></div>
+
+</section>
 
 
-    <!-- TV SHOWS -->
-    <section class="movie-section" id="shows">
+<!-- ================= TV SHOWS ================= -->
 
-        <div class="section-title">
-            <h2>New Releases</h2>
+<section class="section" id="shows">
+
+    <div class="section-title">
+
+        <div>
+            <h2>TV Shows</h2>
+            <p>Binge-worthy series</p>
         </div>
 
-        <div class="movie-container">
+        <div class="slider-buttons">
 
-            <div class="movie-row">
+            <button onclick="scrollRow('showsRow', -1)">
+                ‹
+            </button>
 
-                <div class="movie-card">
-                    <div class="poster poster13">
-                        <h3>PARALLEL</h3>
-                    </div>
-                </div>
+            <button onclick="scrollRow('showsRow', 1)">
+                ›
+            </button>
 
-                <div class="movie-card">
-                    <div class="poster poster14">
-                        <h3>BLUE<br>HOUR</h3>
-                    </div>
-                </div>
+        </div>
 
-                <div class="movie-card">
-                    <div class="poster poster15">
-                        <h3>SIGNAL<br>LOST</h3>
-                    </div>
-                </div>
+    </div>
 
-                <div class="movie-card">
-                    <div class="poster poster16">
-                        <h3>RUNAWAY</h3>
-                    </div>
-                </div>
+    <div class="movie-row" id="showsRow"></div>
 
-                <div class="movie-card">
-                    <div class="poster poster17">
-                        <h3>THE<br>DEEP</h3>
-                    </div>
-                </div>
+</section>
 
+
+<!-- ================= GENRES ================= -->
+
+<section class="section">
+
+    <div class="section-title">
+
+        <div>
+            <h2>Browse by Genre</h2>
+            <p>Find your next favorite</p>
+        </div>
+
+    </div>
+
+    <div class="genres">
+
+        <button>Action</button>
+
+        <button>Adventure</button>
+
+        <button>Comedy</button>
+
+        <button>Drama</button>
+
+        <button>Horror</button>
+
+        <button>Sci-Fi</button>
+
+        <button>Thriller</button>
+
+        <button>Animation</button>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MY LIST ================= -->
+
+<section class="section my-list" id="my-list">
+
+    <div class="section-title">
+
+        <div>
+
+            <h2>My List</h2>
+
+            <p>Movies you've saved</p>
+
+        </div>
+
+    </div>
+
+    <div
+        class="movie-row"
+        id="myListRow"
+    ></div>
+
+    <div
+        class="empty-list"
+        id="emptyList"
+    >
+        Your list is empty.
+        Click the <b>+</b> button on a movie to add it.
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="logo">
+        STREAM<span>BOX</span>
+    </div>
+
+    <p>
+        © 2026 StreamBox. Frontend streaming project.
+    </p>
+
+</footer>
+
+
+<!-- ================= MOVIE MODAL ================= -->
+
+<div class="modal" id="movieModal">
+
+    <div class="modal-content">
+
+        <button
+            class="close-modal"
+            id="closeModal"
+        >
+            ✕
+        </button>
+
+        <img
+            id="modalPoster"
+            src=""
+            alt="Movie Poster"
+        >
+
+        <div class="modal-info">
+
+            <div class="modal-label">
+                STREAMBOX
             </div>
 
+            <h2 id="modalTitle">
+                Movie
+            </h2>
+
+            <div
+                class="modal-meta"
+                id="modalMeta"
+            ></div>
+
+            <p id="modalDescription"></p>
+
+            <button class="play-button">
+                ▶ Play
+            </button>
+
         </div>
 
-    </section>
+    </div>
+
+</div>
 
 
-    <!-- FOOTER -->
-    <footer>
-
-        <h2>
-            STREAM<span>BOX</span>
-        </h2>
-
-        <p>
-            Educational streaming UI clone
-        </p>
-
-        <p>
-            Built with HTML, CSS and JavaScript
-        </p>
-
-    </footer>
-
-
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
